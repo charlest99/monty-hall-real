@@ -7,9 +7,9 @@
  			<h1 style = 'text-align: center;font-size:200%;font-family: courier;'>Monty Hall Game Rules</h1>
  			<p style = 'text-align: center;font-size:200%;font-family: courier;'>Money is behind one of three doors. Pick a door, a door without the money will be eliminated, and then you will be given the option to switch your door choice between the remaining two. After choosing, the door with the money is revealed.</p>
  			<p align = "center">
- 				<img src="/static/door.jpg.jpg" onclick="clickOne(win)" id="Door One">
- 				<img src="/static/door.jpg.jpg" onclick="clickTwo(win)" id="Door Two">
- 				<img src="/static/door.jpg.jpg" onclick="clickThree(win)" id="Door Three">
+ 				<img src="/static/jpeg/door.jpg" onclick="clickOne(win)" id="Door One">
+ 				<img src="/static/jpeg/door.jpg" onclick="clickTwo(win)" id="Door Two">
+ 				<img src="/static/jpeg/door.jpg" onclick="clickThree(win)" id="Door Three">
 			</p>
 			<p align = 'center' id="textChange">
 				Click a door! 
@@ -28,26 +28,26 @@
 				win = Math.random();
 				function clickOne(win){
 					if (win >= .66){
-						document.getElementById("Door Two").src = "/static/goat.jpg";
+						document.getElementById("Door Two").src = "/static/jpeg/goat.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
 						document.getElementById("Door Three").onclick = switchThree;
 						document.getElementById("Door One").onclick = stayOne;
 					}
 					else if (win >= .33){
-						document.getElementById("Door Three").src = "/static/goat.jpg";
+						document.getElementById("Door Three").src = "/static/jpeg/goat.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
 						document.getElementById("Door One").onclick = stayOne;
 						document.getElementById("Door Two").onclick = switchTwo;
 					}
 					else{
 						if(Math.random()>=.5){
-							document.getElementById("Door Two").src = "/static/goat.jpg";
+							document.getElementById("Door Two").src = "/static/jpeg/goat.jpg";
 							document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
 							document.getElementById("Door Three").onclick = switchThree;
 							document.getElementById("Door One").onclick = stayOne;
 						}
 						else{
-							document.getElementById("Door Three").src = "/static/goat.jpg";
+							document.getElementById("Door Three").src = "/static/jpeg/goat.jpg";
 							document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
 							document.getElementById("Door One").onclick = stayOne;
 							document.getElementById("Door Two").onclick = switchTwo;
@@ -57,26 +57,26 @@
 
 				function clickTwo(){
 					if (win >= .66){
-						document.getElementById("Door One").src = "/static/goat.jpg";
+						document.getElementById("Door One").src = "/static/jpeg/goat.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
 						document.getElementById("Door Three").onclick = switchThree;
 						document.getElementById("Door Two").onclick = stayTwo;
 					}
 					else if (win < .33){
-						document.getElementById("Door Three").src = "/static/goat.jpg";
+						document.getElementById("Door Three").src = "/static/jpeg/goat.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
 						document.getElementById("Door One").onclick = switchOne;
 						document.getElementById("Door Two").onclick = stayTwo;
 					}
 					else{
 						if(Math.random()>=.5){
-							document.getElementById("Door One").src = "/static/goat.jpg";
+							document.getElementById("Door One").src = "/static/jpeg/goat.jpg";
 							document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
 							document.getElementById("Door Three").onclick = switchThree;
 							document.getElementById("Door Two").onclick = stayTwo;
 						}
 						else{
-							document.getElementById("Door Three").src = "/static/goat.jpg";
+							document.getElementById("Door Three").src = "/static/jpeg/goat.jpg";
 							document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
 							document.getElementById("Door One").onclick = switchOne;
 							document.getElementById("Door Two").onclick = stayTwo;
@@ -86,26 +86,26 @@
 
 				function clickThree(){
 					if (win <= .33){
-						document.getElementById("Door Two").src = "/static/goat.jpg";
+						document.getElementById("Door Two").src = "/static/jpeg/goat.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
 						document.getElementById("Door Three").onclick = stayThree;
 						document.getElementById("Door One").onclick = switchOne;
 					}
 					else if (win < .66){
-						document.getElementById("Door One").src = "/static/goat.jpg";
+						document.getElementById("Door One").src = "/static/jpeg/goat.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
 						document.getElementById("Door Three").onclick = stayThree;
 						document.getElementById("Door Two").onclick = switchTwo;
 					}
 					else{
 						if(Math.random()>=.5){
-							document.getElementById("Door One").src = "/static/goat.jpg";
+							document.getElementById("Door One").src = "/static/jpeg/goat.jpg";
 							document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
 							document.getElementById("Door Three").onclick = stayThree;
 							document.getElementById("Door Two").onclick = switchTwo;
 						}
 						else{
-							document.getElementById("Door Two").src = "/static/goat.jpg";
+							document.getElementById("Door Two").src = "/static/jpeg/goat.jpg";
 							document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
 							document.getElementById("Door One").onclick = switchOne;
 							document.getElementById("Door Three").onclick = stayThree;
@@ -116,13 +116,13 @@
 				function stayOne(){
 					var w = Math.random()
 					if(w <=.33){
-						document.getElementById("Door One").src = "/static/money.jpg";
+						document.getElementById("Door One").src = "/static/jpeg/money.jpg";
 						document.getElementById("textChange").innerHTML = "You win!";
 						document.getElementById("count").innerHTML = parseInt(document.getElementById("count").innerHTML) + 1;
 						document.getElementById("games").innerHTML = parseInt(document.getElementById("games").innerHTML) + 1;
 					}
 					else{
-						document.getElementById("Door One").src = "/static/goat.jpg";
+						document.getElementById("Door One").src = "/static/jpeg/goat.jpg";
 						document.getElementById("textChange").innerHTML = "You lose.";
 						document.getElementById("games").innerHTML = parseInt(document.getElementById("games").innerHTML) + 1;
 					}
@@ -148,13 +148,13 @@
 				function stayThree(){
 					var w = Math.random()
 					if(w <=.33){
-						document.getElementById("Door Three").src = "/static/money.jpg";
+						document.getElementById("Door Three").src = "/static/jpeg/money.jpg";
 						document.getElementById("textChange").innerHTML = "You win!";
 						document.getElementById("count").innerHTML = parseInt(document.getElementById("count").innerHTML) + 1;
 						document.getElementById("games").innerHTML = parseInt(document.getElementById("games").innerHTML) + 1;
 					}
 					else{
-						document.getElementById("Door Three").src = "/static/goat.jpg";
+						document.getElementById("Door Three").src = "/static/jpeg/goat.jpg";
 						document.getElementById("textChange").innerHTML = "You lose.";
 						document.getElementById("games").innerHTML = parseInt(document.getElementById("games").innerHTML) + 1;
 					}
@@ -164,13 +164,13 @@
 				function switchOne(){
 					var w = Math.random()
 					if(w <=.66){
-						document.getElementById("Door One").src = "/static/money.jpg";
+						document.getElementById("Door One").src = "/static/jpeg/money.jpg";
 						document.getElementById("textChange").innerHTML = "You win!";
 						document.getElementById("count").innerHTML = parseInt(document.getElementById("count").innerHTML) + 1;
 						document.getElementById("games").innerHTML = parseInt(document.getElementById("games").innerHTML) + 1;
 					}
 					else{
-						document.getElementById("Door One").src = "/static/goat.jpg";
+						document.getElementById("Door One").src = "/static/jpeg/goat.jpg";
 						document.getElementById("textChange").innerHTML = "You lose.";
 						document.getElementById("games").innerHTML = parseInt(document.getElementById("games").innerHTML) + 1;
 					}
@@ -179,13 +179,13 @@
 				function switchTwo(){
 					var w = Math.random()
 					if(w <=.66){
-						document.getElementById("Door Two").src = "/static/money.jpg";
+						document.getElementById("Door Two").src = "/static/jpeg/money.jpg";
 						document.getElementById("textChange").innerHTML = "You win!";
 						document.getElementById("count").innerHTML = parseInt(document.getElementById("count").innerHTML) + 1;
 						document.getElementById("games").innerHTML = parseInt(document.getElementById("games").innerHTML) + 1;
 					}
 					else{
-						document.getElementById("Door Two").src = "/static/goat.jpg";
+						document.getElementById("Door Two").src = "/static/jpeg/goat.jpg";
 						document.getElementById("textChange").innerHTML = "You lose.";
 						document.getElementById("games").innerHTML = parseInt(document.getElementById("games").innerHTML) + 1;
 					}
@@ -208,9 +208,9 @@
 				}
 
 				function resetGame(){
-					document.getElementById("Door One").src = "/static/door.jpg.jpg";
-					document.getElementById("Door Two").src = "/static/door.jpg.jpg";
-					document.getElementById("Door Three").src = "/static/door.jpg.jpg";
+					document.getElementById("Door One").src = "/static/jpeg/door.jpg";
+					document.getElementById("Door Two").src = "/static/jpeg/door.jpg";
+					document.getElementById("Door Three").src = "/static/jpeg/door.jpg";
 
 					document.getElementById("textChange").innerHTML = "Click a door!";
 
@@ -219,9 +219,9 @@
 					document.getElementById("Door Three").onclick = clickThree;
 				}
 				function resetCount(){
-					document.getElementById("Door One").src = "/static/door.jpg.jpg";
-					document.getElementById("Door Two").src = "/static/door.jpg.jpg";
-					document.getElementById("Door Three").src = "/static/door.jpg.jpg";
+					document.getElementById("Door One").src = "/static/jpeg/door.jpg";
+					document.getElementById("Door Two").src = "/static/jpeg/door.jpg";
+					document.getElementById("Door Three").src = "/static/jpeg/door.jpg";
 
 					document.getElementById("textChange").innerHTML = "Click a door!";
 
