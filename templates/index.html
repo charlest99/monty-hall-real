@@ -32,12 +32,14 @@
 						document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
 						document.getElementById("Door Three").onclick = switchThree;
 						document.getElementById("Door One").onclick = stayOne;
+						document.getElementById("Door Two").onclick = doNothing;
 					}
 					else if (win >= .33){
 						document.getElementById("Door Three").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
 						document.getElementById("Door One").onclick = stayOne;
 						document.getElementById("Door Two").onclick = switchTwo;
+						document.getElementById("Door Three").onclick = doNothing;
 					}
 					else{
 						if(Math.random()>=.5){
@@ -45,12 +47,14 @@
 							document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
 							document.getElementById("Door Three").onclick = switchThree;
 							document.getElementById("Door One").onclick = stayOne;
+							document.getElementById("Door Two").onclick = doNothing;
 						}
 						else{
 							document.getElementById("Door Three").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
 							document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
 							document.getElementById("Door One").onclick = stayOne;
 							document.getElementById("Door Two").onclick = switchTwo;
+							document.getElementById("Door Three").onclick = doNothing;
 						}
 					}
 				}
@@ -61,12 +65,14 @@
 						document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
 						document.getElementById("Door Three").onclick = switchThree;
 						document.getElementById("Door Two").onclick = stayTwo;
+						document.getElementById("Door One").onclick = doNothing;
 					}
 					else if (win < .33){
 						document.getElementById("Door Three").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
 						document.getElementById("Door One").onclick = switchOne;
 						document.getElementById("Door Two").onclick = stayTwo;
+						document.getElementById("Door Three").onclick = doNothing;
 					}
 					else{
 						if(Math.random()>=.5){
@@ -74,12 +80,14 @@
 							document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
 							document.getElementById("Door Three").onclick = switchThree;
 							document.getElementById("Door Two").onclick = stayTwo;
+							document.getElementById("Door One").onclick = doNothing;
 						}
 						else{
 							document.getElementById("Door Three").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
 							document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
 							document.getElementById("Door One").onclick = switchOne;
 							document.getElementById("Door Two").onclick = stayTwo;
+							document.getElementById("Door Three").onclick = doNothing;
 						}
 					}
 				}
@@ -90,12 +98,14 @@
 						document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
 						document.getElementById("Door Three").onclick = stayThree;
 						document.getElementById("Door One").onclick = switchOne;
+						document.getElementById("Door Two").onclick = doNothing;
 					}
 					else if (win < .66){
 						document.getElementById("Door One").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
 						document.getElementById("Door Three").onclick = stayThree;
 						document.getElementById("Door Two").onclick = switchTwo;
+						document.getElementById("Door One").onclick = doNothing;
 					}
 					else{
 						if(Math.random()>=.5){
@@ -103,12 +113,14 @@
 							document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
 							document.getElementById("Door Three").onclick = stayThree;
 							document.getElementById("Door Two").onclick = switchTwo;
+							document.getElementById("Door One").onclick = doNothing;
 						}
 						else{
 							document.getElementById("Door Two").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
 							document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
 							document.getElementById("Door One").onclick = switchOne;
 							document.getElementById("Door Three").onclick = stayThree;
+							document.getElementById("Door Two").onclick = doNothing;
 						}
 					}
 				}
@@ -205,6 +217,9 @@
 						document.getElementById("games").innerHTML = parseInt(document.getElementById("games").innerHTML) + 1;
 					}
 					
+				}
+				function doNothing(){
+					document.getElementById("textChange").innerHTML = "Door already open.";
 				}
 
 				function resetGame(){
