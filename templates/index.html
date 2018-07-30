@@ -7,9 +7,9 @@
  			<h1 style = 'text-align: center;font-size:200%;font-family: courier;'>Monty Hall Game Rules</h1>
  			<p style = 'text-align: center;font-size:200%;font-family: courier;'>Money is behind one of three doors. Pick a door, a door without the money will be eliminated, and then you will be given the option to switch your door choice between the remaining two. After choosing, the door with the money is revealed.</p>
  			<p align = "center">
- 				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN" onclick="clickOne(win)" id="Door One" width = "250" height = "550">
- 				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN" onclick="clickTwo(win)" id="Door Two" width = "250" height = "550">
- 				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN" onclick="clickThree(win)" id="Door Three" width = "250" height = "550">
+ 				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN" onclick="clickOne()" id="Door One" width = "250" height = "550">
+ 				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN" onclick="clickTwo()" id="Door Two" width = "250" height = "550">
+ 				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN" onclick="clickThree()" id="Door Three" width = "250" height = "550">
 			</p>
 			<p align = 'center' id="textChange">
 				Click a door! 
@@ -25,82 +25,43 @@
 			</div>
 			<script>
 				total = 0;
-				win = Math.random();
-				function clickOne(win){
-					if (win >= .66){
+				function clickOne(){
+					if(Math.random()>=.5){
 						document.getElementById("Door Two").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
 						document.getElementById("Door Three").onclick = switchThree;
 						document.getElementById("Door One").onclick = stayOne;
 						document.getElementById("Door Two").onclick = doNothing;
 					}
-					else if (win >= .33){
+					else{
 						document.getElementById("Door Three").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
 						document.getElementById("Door One").onclick = stayOne;
 						document.getElementById("Door Two").onclick = switchTwo;
 						document.getElementById("Door Three").onclick = doNothing;
 					}
-					else{
-						if(Math.random()>=.5){
-							document.getElementById("Door Two").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
-							document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
-							document.getElementById("Door Three").onclick = switchThree;
-							document.getElementById("Door One").onclick = stayOne;
-							document.getElementById("Door Two").onclick = doNothing;
-						}
-						else{
-							document.getElementById("Door Three").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
-							document.getElementById("textChange").innerHTML = "You picked door one, but may now switch doors. Click your choice.";
-							document.getElementById("Door One").onclick = stayOne;
-							document.getElementById("Door Two").onclick = switchTwo;
-							document.getElementById("Door Three").onclick = doNothing;
-						}
-					}
+					
 				}
 
 				function clickTwo(){
-					if (win >= .66){
+					if(Math.random()>=.5){
 						document.getElementById("Door One").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
 						document.getElementById("Door Three").onclick = switchThree;
 						document.getElementById("Door Two").onclick = stayTwo;
 						document.getElementById("Door One").onclick = doNothing;
 					}
-					else if (win < .33){
+					else{
 						document.getElementById("Door Three").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
 						document.getElementById("Door One").onclick = switchOne;
 						document.getElementById("Door Two").onclick = stayTwo;
 						document.getElementById("Door Three").onclick = doNothing;
-					}
-					else{
-						if(Math.random()>=.5){
-							document.getElementById("Door One").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
-							document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
-							document.getElementById("Door Three").onclick = switchThree;
-							document.getElementById("Door Two").onclick = stayTwo;
-							document.getElementById("Door One").onclick = doNothing;
-						}
-						else{
-							document.getElementById("Door Three").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
-							document.getElementById("textChange").innerHTML = "You picked door two, but may now switch doors. Click your choice.";
-							document.getElementById("Door One").onclick = switchOne;
-							document.getElementById("Door Two").onclick = stayTwo;
-							document.getElementById("Door Three").onclick = doNothing;
-						}
 					}
 				}
 
 				function clickThree(){
-					if (win <= .33){
-						document.getElementById("Door Two").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
-						document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
-						document.getElementById("Door Three").onclick = stayThree;
-						document.getElementById("Door One").onclick = switchOne;
-						document.getElementById("Door Two").onclick = doNothing;
-					}
-					else if (win < .66){
+					if(Math.random()>=.5){
 						document.getElementById("Door One").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
 						document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
 						document.getElementById("Door Three").onclick = stayThree;
@@ -108,21 +69,12 @@
 						document.getElementById("Door One").onclick = doNothing;
 					}
 					else{
-						if(Math.random()>=.5){
-							document.getElementById("Door One").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
-							document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
-							document.getElementById("Door Three").onclick = stayThree;
-							document.getElementById("Door Two").onclick = switchTwo;
-							document.getElementById("Door One").onclick = doNothing;
-						}
-						else{
-							document.getElementById("Door Two").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
-							document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
-							document.getElementById("Door One").onclick = switchOne;
-							document.getElementById("Door Three").onclick = stayThree;
-							document.getElementById("Door Two").onclick = doNothing;
-						}
-					}
+						document.getElementById("Door Two").src = "https://pbs.twimg.com/profile_images/980547001166295041/eBs20xF4_400x400.jpg";
+						document.getElementById("textChange").innerHTML = "You picked door three, but may now switch doors. Click your choice.";
+						document.getElementById("Door One").onclick = switchOne;
+						document.getElementById("Door Three").onclick = stayThree;
+						document.getElementById("Door Two").onclick = doNothing;
+					}	
 				}
 
 				function stayOne(){
@@ -223,7 +175,6 @@
 				}
 
 				function resetGame(){
-					win = Math.random();
 					document.getElementById("Door One").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN";
 					document.getElementById("Door Two").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN";
 					document.getElementById("Door Three").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN";
@@ -235,7 +186,6 @@
 					document.getElementById("Door Three").onclick = clickThree;
 				}
 				function resetCount(){
-					win = Math.random();
 					document.getElementById("Door One").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN";
 					document.getElementById("Door Two").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN";
 					document.getElementById("Door Three").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFff-zG9rvJjOSEzHZYHl3A6kwHaJSN-MGnehwKMzShfEaIupkSDtbqDN";
