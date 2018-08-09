@@ -1,2 +1,3 @@
 # monty-hall-real
-Version of the Monty Hall problem in browser
+# One of two versions of the Monty Hall game, with all functions occuring on the front end.
+#https://monty-hall-cbt.herokuapp.com/
